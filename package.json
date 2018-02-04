@@ -1,5 +1,5 @@
 {
-  "name": "log.level",
+  "name": "@yfe/log",
   "version": "0.1.0",
   "description": "A JavaScript log level module for browser",
   "main": "lib/log.js",

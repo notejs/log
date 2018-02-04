@@ -1,6 +1,6 @@
-# log.level
+# log
 
-log.level 是一个轻量级浏览器端日志分级模块。
+log 是一个轻量级浏览器端日志分级模块。
 
 日志分为如下几级
 
@@ -15,11 +15,11 @@ log.level 是一个轻量级浏览器端日志分级模块。
 ## Usages
 
 ```bash
-$ npm install log.level
+$ npm install @yfe/log
 ```
 
 ```javascript
-import { log } from 'log.level';
+import { log } from '@yfe/log';
 
 // 一个项目只在开始设置一次即可
 log.setConfig({
