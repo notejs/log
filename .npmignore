@@ -1,0 +1,15 @@
+build
+/coverage
+/node_modules
+doc
+.babelrc
+.esdoc.json
+.eslintrc.js
+.eslintignore
+test
+.gitignore
+.npmignore
+.editorconfig
+*.log
+package-lock.json
+/src

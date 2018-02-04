@@ -1,0 +1,37 @@
+{
+    "env": {
+        "development": {
+            "presets": ["env"],
+            "plugins": [
+                "transform-runtime",
+                "transform-object-assign",
+                "transform-decorators-legacy",
+                "transform-class-properties"
+            ]
+        },
+        "production": {
+            "presets": ["env"],
+            "plugins": [
+                "transform-runtime",
+                "transform-object-assign",
+                "transform-decorators-legacy",
+                "transform-class-properties"
+            ]
+        },
+        "test": {
+            "presets": ["env"],
+            "plugins": [
+                "transform-runtime",
+                "transform-object-assign",
+                "transform-decorators-legacy",
+                "transform-class-properties", ["istanbul",
+                    {
+                        "exclude": [
+                            "./test/unit/**/*.test.js"
+                        ]
+                    }
+                ]
+            ]
+        }
+    }
+}
