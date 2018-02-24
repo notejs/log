@@ -28,6 +28,7 @@ function _log(level, msg) {
     if ( (levelMap[window.__log_level || config.level]) <= levelMap[level]) {
         (console[level] || console.log)(msg);
         if (config.logServerUrl) {
+            msg = 'object' === typeof(msg) ? JSON.stringify(msg) : msg;
             jsonp(
                 config.logServerUrl,
                 config.logServerParam,
