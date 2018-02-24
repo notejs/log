@@ -15,7 +15,7 @@ log 是一个轻量级浏览器端日志分级模块。
 ## Usages
 
 ```bash
-$ npm install @yfe/log
+$ npm install --save @yfe/log
 ```
 
 ```javascript
