@@ -10,7 +10,7 @@ log 是一个轻量级浏览器端日志分级模块。
 - error，错误，可修复，但无法确定系统是否能正常运行
 - fatal，严重错误，无法修复，系统继续运行会产生严重后果
 
-该模块还可将日志发送到指定平台（如[browser.log.io](https://github.com/notejs/browser.log.io)）方便测试工程师和非技术人员定位问题和提供信息给技术人员。
+该模块还可将日志发送到指定平台（如[log.io](https://github.com/notejs/log.io)）方便测试工程师和非技术人员定位问题和提供信息给技术人员。
 
 ## Usages
 
