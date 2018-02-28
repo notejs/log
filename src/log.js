@@ -24,15 +24,16 @@ const config = {
     logServerParam:  'msg'
 };
 
-function _log(level, msg) {
+function _log(level, msg, id = '') {
     if ( (levelMap[window.__log_level || config.level]) <= levelMap[level]) {
-        (console[level] || console.log)(msg);
+        (console[level] || console.log).bind(console)(msg);
         if (config.logServerUrl) {
             msg = 'object' === typeof(msg) ? JSON.stringify(msg) : msg;
+            id = id ? ` [${id}] ` : ' ';
             jsonp(
                 config.logServerUrl,
                 config.logServerParam,
-                `[${level}] ${msg}`
+                `[${level}]${id}${msg}`
             );
         }
     }
@@ -75,40 +76,40 @@ class Log {
      * 级别最低，可以用于任何有利于在调试时可详细了解系统运行状态的信息
      * @param {String} msg - 日志详情
      */
-    static debug(msg) {
-        _log('debug', msg);
+    static debug(msg, id) {
+        _log('debug', msg, id);
     }
 
     /**
      * 重要，用来反馈当前运行状态
      * @param {String} msg - 日志详情
      */
-    static info(msg) {
-        _log('info', msg);
+    static info(msg, id) {
+        _log('info', msg, id);
     }
 
     /**
      * 警告，可修复，系统可继续执行下去
      * @param {String} msg - 日志详情
      */
-    static warn(msg) {
-        _log('warn', msg);
+    static warn(msg, id) {
+        _log('warn', msg, id);
     }
 
     /**
      * 错误，可修复，但无法确定系统是否能正常运行
      * @param {String} msg - 日志详情
      */
-    static error(msg) {
-        _log('error', msg);
+    static error(msg, id) {
+        _log('error', msg, id);
     }
 
     /**
      * 严重错误，无法修复，系统继续运行会产生严重后果
      * @param {String} msg - 日志详情
      */
-    static fatal(msg) {
-        _log('fatal', msg);
+    static fatal(msg, id) {
+        _log('fatal', msg, id);
     }
 }
 
